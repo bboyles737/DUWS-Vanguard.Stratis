@@ -1,0 +1,6 @@
+Zones:
+[ID, Location, Size, Control]
+	:ID (Integer)
+	:Location ([Float, Float])
+	:Size (Float)
+	:Control (Float) 0 = BLUFOR, 1 = OPFOR, 2 = IND

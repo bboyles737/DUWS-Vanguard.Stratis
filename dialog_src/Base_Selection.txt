@@ -1,0 +1,10 @@
+$[
+	1.063,
+	["BaseSelect",[[0,0,1,1],0.025,0.04,"GUI_GRID"],0,0,0],
+	[2200,"BaseSelect_Background",[2,"",["11 * GUI_GRID_W + GUI_GRID_X","6 * GUI_GRID_H + GUI_GRID_Y","19 * GUI_GRID_W","13 * GUI_GRID_H"],[-1,-1,-1,-1],[0,0,0,0.7],[-1,-1,-1,-1],"","-1"],[]],
+	[1800,"BaseType_Frame",[2,"Base Type",["11.5 * GUI_GRID_W + GUI_GRID_X","6.5 * GUI_GRID_H + GUI_GRID_Y","18 * GUI_GRID_W","8.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[2100,"",[2,"",["14.5 * GUI_GRID_W + GUI_GRID_X","7.5 * GUI_GRID_H + GUI_GRID_Y","12 * GUI_GRID_W","1 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","-1"],[]],
+	[1000,"BaseType_Text",[2,"Choose your HQ type and site selection method.  FOBs offer more limited site selections but start with greater Army Power.  Patrol Bases are easier to hide and offer cheaper infantry recruitment though with more expensive vehicles.",["12 * GUI_GRID_W + GUI_GRID_X","9 * GUI_GRID_H + GUI_GRID_Y","17 * GUI_GRID_W","5.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"","0.75"],[]],
+	[1600,"ManualPlacement_Button",[2,"Manual",["13 * GUI_GRID_W + GUI_GRID_X","15.5 * GUI_GRID_H + GUI_GRID_Y","6 * GUI_GRID_W","2.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Place your base manually.  If a Patrol Base, you can fine tune your site on the ground.","-1"],[]],
+	[1601,"RandomSite_Button",[2,"Random",["22 * GUI_GRID_W + GUI_GRID_X","15.5 * GUI_GRID_H + GUI_GRID_Y","6 * GUI_GRID_W","2.5 * GUI_GRID_H"],[-1,-1,-1,-1],[-1,-1,-1,-1],[-1,-1,-1,-1],"Randomly selects a suitable site.  You can refine the position of a Patrol Base on the ground.","-1"],[]]
+]

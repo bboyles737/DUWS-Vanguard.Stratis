@@ -1,0 +1,12 @@
+OnLoadMission = "A procedurally generated campaign where you earn resources, execute missions and lead your forces to capture the island and win the war.";
+onLoadName = "DUWS: Vanguard v0.25";
+dev = "dev";
+author = "Victor Troska, original by kibot";
+overviewText = "A procedurally generated campaign where you earn resources, execute missions and lead your forces to capture the island and win the war.";
+overviewPicture = "duwsv_title.paa";
+LoadScreen = "duwsv_title.paa";
+
+// User interface
+#include "defines.hpp"
+#include "scripts\HUD_info\HUD_info.hpp"
+#include "settings\environment_settings.hpp" 

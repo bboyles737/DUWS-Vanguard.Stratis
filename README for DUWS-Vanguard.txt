@@ -1,6 +1,9 @@
 DUWS: Vanguard
 
-Version 0.01 (7AUG16):
+Version 0.251 (9AUG16):
+- Fixed overlapping zone bug - was using distance function instead of distance2D function and comparing a 2D to 3D coord.
+
+Version 0.25 (7AUG16):
 - OBJECTIVES: Bare bones refactoring of DUWS
 - Utilizes the dynamic weather / environment settings from DUWS-R 0.24
 - Utilizes the default map texture off script from DUWS-R 0.24

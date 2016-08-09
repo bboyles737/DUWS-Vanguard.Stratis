@@ -1,10 +1,10 @@
 ["Starting random zone script"] call DLog;
 _ZonesToCreate = Num_Zones;
 Timeout = false;                // Needs to be a global variable for timeout script to work
-[format ["Random Zones to Create: %1", _ZonesToCreate]] call DLog;
+//[format ["Random Zones to Create: %1", _ZonesToCreate]] call DLog;
 
 _TimeoutScript = [] spawn {
-    sleep 5;
+    sleep 90;
     Timeout = true;
 };
 
@@ -14,11 +14,11 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
     scopeName "createZones";
 
     _CreateThisZone = true;
-    [format ["Looking for zone location #%1...", _CurrentZoneNum]] call DLog;
+    //[format ["Looking for zone location #%1...", _CurrentZoneNum]] call DLog;
     
     // Min_Zone_Rad and Max_Zone_Rad defined in intro\setup.sqf
     _CurrentZoneRad = [Min_Zone_Rad, Max_Zone_Rad, 0] call RandRange_Round;
-    [format ["Zone size is: %1 (between %2 and %3)", _CurrentZoneRad, Min_Zone_Rad, Max_Zone_Rad]] call DLog;
+    //[format ["Zone size is: %1 (between %2 and %3)", _CurrentZoneRad, Min_Zone_Rad, Max_Zone_Rad]] call DLog;
     
     // Map_Center and Dist_Map_Corner is defined in scripts\BasePlacement\map_size.sqf
     _MinDistNearestObj = 5;
@@ -45,12 +45,13 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
         _CompareZoneCenter = _x select 1;
         _CompareZoneRad = _x select 2;
         
-        _DistBetween = _CompareZoneCenter distance _ZoneLocation;
+        _DistBetween = _CompareZoneCenter distance2D _ZoneLocation;
         _CompDist = _CompareZoneRad + _CurrentZoneRad + Zone_Buffer;
+        [format ["DEBUG Comparing Zones %1 to %2, Locn %3 and %4.", _x select 0, _CurrentZoneNum, _CompareZoneCenter, _ZoneLocation]] call DLog;
         [format ["DEBUG %1 + %2 + %3 = %4.  Dist is %5", _CompareZoneRad, _CurrentZoneRad, Zone_Buffer, _CompDist, _DistBetween]] call DLog;
         if (_DistBetween < _CompDist) then {            
             // Insufficient space, do not add to Zone_Array, decrement _CurrentZoneNum so we loop again
-            [format ["Zone %1 doesn't have space with Zone %2.  Breaking loop.  TIMEOUT %3", _CurrentZoneNum, _x select 0, Timeout]] call DLog;
+            // [format ["Zone %1 doesn't have space with Zone %2.  Breaking loop.  TIMEOUT %3", _CurrentZoneNum, _x select 0, Timeout]] call DLog;
             _CurrentZoneNum = _CurrentZoneNum - 1;
             _CreateThisZone = false;
             breakOut "compareZones";

@@ -64,7 +64,7 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
         [format ["Zone %1 has enough space and is being created.", _CurrentZoneNum]] call DLog;
         
         // Add to array of zones (zone #, zone location, radius, control with 1 = OPFOR)
-        Zone_Array = Zone_Array + [[_CurrentZoneNum, _ZoneLocation, _CurrentZoneRad, 1]];
+        Zone_Array = Zone_Array + [[_CurrentZoneNum, _ZoneLocation, _CurrentZoneRad, SIDE_OPFOR]];
         
         // The below marker creation will eventually be moved to its own script file
         

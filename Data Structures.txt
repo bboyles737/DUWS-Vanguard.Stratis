@@ -1,6 +1,10 @@
-Zones:
+Zones: (Zone_Array is global variable for the zone array)
 [ID, Location, Size, Control]
 	:ID (Integer)
 	:Location ([Float, Float])
 	:Size (Float)
-	:Control (Float) 0 = BLUFOR, 1 = OPFOR, 2 = IND
+	:Control (Int) 0 = BLUFOR, 1 = OPFOR, 2 = IND, 3 = CIV, 10 = None
+	
+Zone Marker Naming Conventions:
+CenterZoneX --> Text at center of zone.  X is zone ID number.
+ZoneX --> Shaded zone marker.  X is zone ID number.

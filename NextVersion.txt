@@ -1,0 +1,91 @@
+Add notifications/notifications.hpp from DUWS-R
+Add zones/enter_zone.sqf from DUWS-R
+* CreateZone function [modified to strip out piers, etc.]
+
+
+
+// CreateZoneMarkers - creates a zone given the following arguments:
+// [ID, Position, Side, Size (m), Name]
+// Side is SIDE_BLUE (0), SIDE_OPFOR (1), SIDE_IND (2), SIDE_CIV (3), or SIDE_NONE (10).  Defined in DUWS-V.sqf.
+CreateZoneMarkers = {
+    _thisID = _this select 0;
+    _thisLoc = _this select 1;
+    _thisSide = _this select 2;
+    _zoneSize = _this select 3;
+    _zoneName = _this select 4;
+    
+    [format ["Establishing markers for zone %1.", _thisID]] call DLog;
+    
+    // Zone name
+    _MarkerName = format ["CenterZone%1", _thisID];
+    _Marker = createMarker [str(_MarkerName), _thisLoc];    
+    _Marker setMarkerShape "ICON";
+    _Marker setMarkerType "hd_objective"; 
+    _Marker setMarkerSize [0, 0];
+    _Marker setMarkerText _zoneName;
+    
+    // Elliptical zone coloring
+    _MarkerName = format["Zone%1", _thisID];
+    _ZoneMarker = createMarker [str(_MarkerName), _thisLoc];
+    _ZoneMarker setMarkerShape "ELLIPSE";
+    _ZoneMarker setMarkerBrush "SolidBorder";    
+    _ZoneMarker setMarkerSize [_zoneSize, _zoneSize];
+    
+    [_Marker, _ZoneMarker, _thisSide] call SetZoneColors;
+    
+    // Trigger for entry/departure notifications
+    _ZoneEntryTrigger = createTrigger["EmptyDetector", _thisLoc];
+    _ZoneEntryTrigger triggerAttachVehicle [player];
+    _ZoneEntryTrigger setTriggerArea [_zoneSize, _zoneSize, 0, false];
+    _ZoneEntryTrigger setTriggerActivation ["VEHICLE", "PRESENT", true];           
+    _ZoneEntryTrigger setTriggerStatements ["this", format ["[""%1"", thislist] execvm 'zones\enter_zone.sqf'", _thisName], ""];    
+};
+
+// SetZoneColors - sets the color of a zone given the following arguments:
+// [TextMarkerName, ZoneMarkerName, Side]
+// Side is SIDE_BLUE (0), SIDE_OPFOR (1), SIDE_IND (2), SIDE_CIV (3), or SIDE_NONE (10).  Defined in DUWS-R.sqf.
+SetZoneColor = {
+  _textMarker = _this select 0;
+  _zoneMarker = _this select 1;
+  _side = _this select 2;
+  
+  // These are overwritten by the case statement below
+  _setColorTo = "ColorWhite";
+  _setAlphaTo = 0.0;
+  
+  switch (_side) do {
+    case SIDE_BLUFOR: { _setColorTo = "colorBLUFOR";
+                        _setAlphaTo = 0.2;};
+    case SIDE_OPFOR:  { _setColorTo = "colorOPFOR";
+                        _setAlphaTo = 0.2;};
+    case SIDE_IND:    { _setColorTo = "colorIndependent";
+                        _setAlphaTo = 0.2;};
+    case SIDE_CIV:    { _setColorTo = "colorCivilian";
+                        _setAlphaTo = 0.2;};
+    case SIDE_NONE:   { _setColorTo = "ColorGrey";
+                        _setAlphaTo = 0.4;};
+  };
+  
+  _textMarker setMarkerColor _setColorTo;
+  _zoneMarker setMarkerColor _setColorTo;
+  _zoneMarker setMarkerAlpha _setAlphaTo;
+};
+
+// ChangeZoneControl changes who controls a zone and its associated marker on themap
+// [Zone Data Struct, New Side]
+// Sides: SIDE_BLUFOR = 0, SIDE_OPFOR = 1, SIDE_IND = 2, SIDE_CIV = 3, SIDE_NONE = 10
+ChangeZoneControl = {
+  _zone = _this select 0;
+  _zoneNum = _zone select 0;
+  _newSide = _this select 1;
+  
+  [format ["Changing zone %1 to side %2 control.", _zoneNum, _newSide]] call DLog;
+  
+  _zone set [3, _newSide];
+  Zone_Array set [(_zoneNum - 1, _zone]
+  
+  _markerName = format["CenterZone%1", _zoneNum];
+  _zoneMarkerName = format["Zone%1", zoneNum];
+  
+  [_markerName, _zoneMarkerName, _newSide] call SetZoneColors;
+};

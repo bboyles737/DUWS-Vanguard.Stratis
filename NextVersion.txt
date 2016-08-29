@@ -3,13 +3,85 @@ Add zones/enter_zone.sqf from DUWS-R
 Need to add capturable trigger... see initZones/createzone.sqf
 
 Other zones to import from DUWS
-    // Research Bunker
     // Recon Outpost
     // Power Relay
     // Comm Station
     // Outpost 1
     // Outpost 2
     // Barracks
-    // Research Station
     // Camp Site
+    
+    
+// Spawning function for OPFOR Base
+// Research Bunker
+// Note: CenterZoneX is the marker for the center of our zone.
+// [Zone to spawn]
+_zoneNum = _this select 0;
 
+_centerZone = format["CenterZone%1", _zoneNum];
+[_centerZone] call setDefaultSpawn;
+
+// Bunker and associated structures
+_ResearchBunker = ["Land_Bunker_F", [-0.809, -2.743], 13.849] call spawnCollide;
+_Cargo1 = ["Land_CargoBox_V1_F", [-1.289, 4.064]] call spawnCollide;
+
+// Bunker Fence
+_Fence1 = ["Land_BagFence_Long_F", [4.265, 5.231], 18.730] call spawnCollide;
+_Fence2 = ["Land_BagFence_Long_F", [-0.889, 6.603], 11.164] call spawnCollide;
+_Fence3 = ["Land_BagFence_Short_F", [-3.673, -2.216], 191.129] call spawnCollide;
+_Fence4 = ["Land_BagFence_Short_F", [2.085, -3.635], 13.330] call spawnCollide;
+_Fence5 = ["Land_BagFence_Corner_F", [8.035, 3.450], 15.327] call spawnCollide;
+_Fence6 = ["Land_BagFence_Corner_F", [7.054, -1.255], 101.859] call spawnCollide;
+_Fence7 = ["Land_BagFence_End_F", [-7.165, 2.020], -76.518] call spawnCollide;
+_Fence8 = ["Land_BagFence_Round_F", [-5.390, -5.192], 12.319] call spawnCollide;
+_Fence9 = ["Land_BagFence_Round_F", [1.179, -7.902], 12.319] call spawnCollide;
+
+// Barriers and Walls
+_Barrier1 = ["Land_HBarrier_1_F", [3.467, 2.749], 12.526] call spawnCollide;
+_Barrier2 = ["Land_HBarrier_3_F", [0.099, 3.295], 14.263] call spawnCollide;
+_Wall1 = ["Land_Mil_WallBig_4m_F", [5.797, -4.751], 106.182] call spawnCollide;
+_Wall2 = ["Land_Mil_WallBig_4m_F", [7.734, 1.592], 108.103] call spawnCollide;
+_Wall3 = ["Land_Mil_WallBig_4m_F", [-6.001, 4.906], 286.122] call spawnCollide;
+_Wall4 = ["Land_Mil_WallBig_4m_F", [-7.724, -0.908], 286.122] call spawnCollide;
+
+// Lighting
+_Light1 = ["Land_LampHarbour_F", [2.972, -3.451], -165.604] call spawnCollide;
+_Light2 = ["Land_LampHarbour_F", [-4.515, -1.559], -165.604] call spawnCollide;
+
+// End of script
+
+
+// Spawning function for OPFOR Base
+// Research Station
+// Note: CenterZoneX is the marker for the center of our zone.
+// [Zone to spawn]
+_zoneNum = _this select 0;
+
+_centerZone = format["CenterZone%1", _zoneNum];
+[_centerZone] call setDefaultSpawn;
+
+// Create structures
+_House1 = ["Land_Cargo_House_V1_F", [-1.827, 0.920], -74.556] call spawnCollide;
+_Toilet1 = ["Land_FieldToilet_F", [-5.051, -1.687], 15.579] call spawnCollide;
+
+// Create barriers
+_Barrier1 = ["Land_HBarrier_5_F", [-5.269, 4.27], 104.750] call spawnCollide;
+_Barrier2 = ["Land_HBarrier_3_F", [-2.230, 4.999], 15.887] call spawnCollide;
+_Barrier3 = ["Land_HBarrier_1_F", [-3.736, 5.043], 103.437] call spawnCollide;
+_Barrier4 = ["Land_CncBarrierMedium_F", [4.091, 5.857], 16.499] call spawnCollide;
+_Barrier5 = ["Land_CncBarrierMedium4_F", [-4.131, -5.419], 15.333] call spawnCollide;
+_Barrier6 = ["Land_CncBarrierMedium_F", [5.909, 5.292], 11.829] call spawnCollide;
+_Barrier7 = ["Land_CncBarrierMedium_F", [2.256, 6.773]] call spawnCollide;
+
+// Create canisters and containers
+_Canister1 = ["Land_CanisterPlastic_F", [-0.349, -0.098], 138.447] call spawnCollide;
+_Canister2 = ["Land_CanisterPlastic_F", [-0.530, -0.554], 192.667] call spawnCollide;
+_Container1 = ["Land_Cargo20_grey_F", [3.761, -3.921], -58.979] call spawnCollide;
+_Barrel1 = ["Land_WaterBarrel_F", [-0.506, -1.361]] call spawnCollide;
+_WaterTank = ["Land_WaterTank_F", [5.765, -0.712], 30.685] call spawnCollide;
+
+// Misc items
+_Bench1 = ["Land_Bench_F", [1.305, 3.154], 14.868] call spawnCollide;
+
+
+// End of script

@@ -1,13 +1,26 @@
-Add notifications/notifications.hpp from DUWS-R
-Add zones/enter_zone.sqf from DUWS-R
-Need to add capturable trigger... see initZones/createzone.sqf
++ Add capturable trigger to zones (see initZones/createzone.sqf in original DUWS)
++ Implement and test facility spawn functions and files
++ Spawn zone garrisons (hold off on AP-generated patrols)
+    --- Develop default side class configurations (for future modability of friendly/enemy sides)
+        [Each side has a script file - the functions return arrays of classes so you can store them in global vars
+        for the friendly and enemy side.  The files describe what classes are used for spawning patrols]
++ BLUFOR HQ spawn
++ LOGPAC GUI Interface (just requesting soldiers)
++ Squad Manager GUI Interface
++ Flesh out LOGPAC GUI for weapons, ammo, vehicles
++ Add basic support functions
++ High Command tie-ins
++ Persistant stats and unlockable abilities
++ Army Power patrols for BLUFOR and OPFOR
++ Import remaining zones from DUWS original
+    -- Comm Station
+    -- Outpost 1
+    -- Outpost 2
+    -- Barracks
+    -- Camp Site
 
-Other zones to import from DUWS
-    // Comm Station
-    // Outpost 1
-    // Outpost 2
-    // Barracks
-    // Camp Site
+
+------------------------ Code snippets below -------------------------------
 
 
 // Spawning function for OPFOR Base

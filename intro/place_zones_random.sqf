@@ -1,5 +1,6 @@
 ["Starting random zone script"] call DLog;
 _ZonesToCreate = Num_Zones;
+_ZoneDebug = false;
 Timeout = false;                // Needs to be a global variable for timeout script to work
 //[format ["Random Zones to Create: %1", _ZonesToCreate]] call DLog;
 
@@ -31,7 +32,9 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
     _ZoneLocation = [Map_Center, 0, Dist_Map_Corner, _MinDistNearestObj, _WaterMode, _MaxTerrainGradient, _ShoreMode] call BIS_fnc_findSafePos;
     
     if (_ZoneLocation select 0 != 0 && _ZoneLocation select 1 != 0) then {
-        [format ["Zone %1 tentative location is centered at %2", _CurrentZoneNum, _ZoneLocation]] call DLog;
+        if (_ZoneDebug) then {
+            [format ["Zone %1 tentative location is centered at %2", _CurrentZoneNum, _ZoneLocation]] call DLog;
+        };
     } else {
         [format ["ERROR!  Zone %1 cannot be placed", _CurrentZoneNum]] call DLog;
     };
@@ -47,8 +50,11 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
         
         _DistBetween = _CompareZoneCenter distance2D _ZoneLocation;
         _CompDist = _CompareZoneRad + _CurrentZoneRad + Zone_Buffer;
-        [format ["DEBUG Comparing Zones %1 to %2, Locn %3 and %4.", _x select 0, _CurrentZoneNum, _CompareZoneCenter, _ZoneLocation]] call DLog;
-        [format ["DEBUG %1 + %2 + %3 = %4.  Dist is %5", _CompareZoneRad, _CurrentZoneRad, Zone_Buffer, _CompDist, _DistBetween]] call DLog;
+        if (_ZoneDebug) then {
+            [format ["DEBUG Comparing Zones %1 to %2, Locn %3 and %4.", _x select 0, _CurrentZoneNum, _CompareZoneCenter, _ZoneLocation]] call DLog;
+            [format ["DEBUG %1 + %2 + %3 = %4.  Dist is %5", _CompareZoneRad, _CurrentZoneRad, Zone_Buffer, _CompDist, _DistBetween]] call DLog;        
+        };
+        
         if (_DistBetween < _CompDist) then {            
             // Insufficient space, do not add to Zone_Array, decrement _CurrentZoneNum so we loop again
             // [format ["Zone %1 doesn't have space with Zone %2.  Breaking loop.  TIMEOUT %3", _CurrentZoneNum, _x select 0, Timeout]] call DLog;
@@ -61,24 +67,17 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
     } forEach Zone_Array;
     
     if (_CreateThisZone) then {
-        [format ["Zone %1 has enough space and is being created.", _CurrentZoneNum]] call DLog;
+        if (_ZoneDebug) then {
+            [format ["Zone %1 has enough space and is being created.", _CurrentZoneNum]] call DLog;        
+        };
+        
         
         // Add to array of zones (zone #, zone location, radius, control with 1 = OPFOR)
         Zone_Array = Zone_Array + [[_CurrentZoneNum, _ZoneLocation, _CurrentZoneRad, SIDE_OPFOR]];
+                
+        [_CurrentZoneNum, _ZoneLocation, SIDE_OPFOR, _CurrentZoneRad, "Tester Stupod"] call CreateZoneMarkers;
         
-        // The below marker creation will eventually be moved to its own script file
-        
-        _marker = createMarker [format["zcent%1", _CurrentZoneNum], _ZoneLocation];
-        _marker setMarkerShape "ICON";
-        _marker setMarkerType "hd_objective";
-        _marker setMarkerText format["Zone %1", _CurrentZoneNum];
-        _marker setMarkerColor "ColorRed";
-        
-        _zone = createMarker [format["zzone%1", _CurrentZoneNum], _ZoneLocation];
-        _zone setMarkerShape "ELLIPSE";
-        _zone setMarkerColor "ColorRed";
-        _zone setMarkerSize [_CurrentZoneRad, _CurrentZoneRad];
-        _zone setMarkerAlpha 0.1;
+        [Zone_Array select 0, SIDE_BLUFOR] call ChangeZoneControl;
     };
     
     if (Timeout) then {

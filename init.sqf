@@ -5,6 +5,8 @@ DialogWaitFlag = false;               // Used by dialogs to signal completion
 
 call compile preprocessFileLineNumbers "DUWS-V.sqf";                            // Misc. helper functions and variables
 call compile preprocessFileLineNumbers "settings\key_bindings.sqf";             // Custom key bindings
+call compile preprocessFileLineNumbers "scripts\zones\zone_functions.sqf";      // Zone creation and changing functions
+call compile preprocessFileLineNumbers "scripts\spawn\spawn_functions.sqf";     // Spawning functions
 
 _StartupScript = execVM "intro\setup.sqf";      // Does cutscenes, fade-ins, and initial setup
 waitUntil {scriptDone _StartupScript};          // Pauses so that date/time are set properly before debug logs are made.

@@ -5,33 +5,41 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2;
+		nextID=4;
 	};
 	class Camera
 	{
-		pos[]={2637.2534,71.933868,575.42017};
-		dir[]={0.0017503164,-0.278144,0.96054852};
-		up[]={0.0005066272,0.96053332,0.27815548};
-		aside[]={1.0000072,-4.0836994e-008,-0.0018223259};
+		pos[]={2635.8242,85.658951,561.98413};
+		dir[]={-0.42422548,-0.44747493,0.78729117};
+		up[]={-0.2122692,0.8942892,0.39393577};
+		aside[]={0.8803435,-5.4715201e-008,0.47436586};
 	};
 };
 binarizationWanted=0;
 addons[]=
 {
-	"A3_Characters_F"
+	"A3_Characters_F",
+	"A3_Soft_F_Gamma_Hatchback_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
@@ -73,7 +81,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="DUWS-Vanguard v0.25";
+		briefingName="DUWS-Vanguard v0.253";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
@@ -93,7 +101,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1;
+		items=2;
 		class Item0
 		{
 			dataType="Group";
@@ -146,6 +154,22 @@ class Mission
 			{
 			};
 			id=0;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2615.3879,65.647057,617.4397};
+				angles[]={6.2731905,5.7105598,0.012496647};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=3;
+			type="C_Hatchback_01_sport_F";
 		};
 	};
 };

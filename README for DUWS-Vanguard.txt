@@ -1,5 +1,17 @@
 DUWS: Vanguard
 
+Version 0.253 (26AUG16-28AUG16):
+- Functions added for creating and changing zones
+- Functions added to ease spawning facilities
+- Imported spawning functions for a Vehicle Repair Zone [untested]
+- Added functions to return zone markers
+- Implemented zone notifications on entrance and exit
+
+Version 0.252 (11AUG16):
+- Updated DUWS-V to include side definitions for BLUFOR, OPFOR, IND, CIV, and NONE
+- place_zones_random now uses these side definitions in zone creation
+- Zone marker functions written but not placed in the appropriate script file.
+
 Version 0.251 (9AUG16):
 - Fixed bug: Overlapping zones was caused by using distance function instead of distance2D function and comparing a 2D to 3D coord.
 - Readme file updated

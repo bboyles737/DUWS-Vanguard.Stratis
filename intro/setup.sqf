@@ -1,7 +1,7 @@
 cutText ["", "BLACK FADED", 5];
 0 fadeSound 0;
 
-Num_Zones = 10;
+Num_Zones = 5;
 Min_Zone_Rad = 250;
 Max_Zone_Rad = 500;
 Zone_Buffer = 500;

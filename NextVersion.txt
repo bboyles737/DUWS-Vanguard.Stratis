@@ -14,13 +14,109 @@
 + Army Power patrols for BLUFOR and OPFOR
 + Import remaining zones from DUWS original
     -- Comm Station
-    -- Outpost 1
-    -- Outpost 2
     -- Barracks
     -- Camp Site
 
 
 ------------------------ Code snippets below -------------------------------
+// Spawning function for OPFOR Base
+// Outpost 1
+// Note: CenterZoneX is the marker for the center of our zone.
+// [Zone to spawn]
+_zoneNum = _this select 0;
+
+_centerZone = format["CenterZone%1", _zoneNum];
+[_centerZone] call setDefaultSpawn;
+
+// Bunkers
+_Bunker = ["Land_BagBunker_Small_F", [-1.364, -7.026], 21.971] call spawnCollide;
+
+// Supplies
+_AmmoBox1 = ["Box_East_Ammo_F", [-3.758, 5.443], 8.430] call spawnCollide;
+_AmmoBox2 = ["Box_East_Ammo_F", [-0.866, -8.116], -79.370] call spawnCollide;
+_AmmoBox3 = ["Box_East_Ammo_F", [1.829, 6.686]] call spawnCollide;
+_AmmoBox4 = ["Box_East_Grenades_F", [0.998, 6.952], 99.495] call spawnCollide;
+_AmmoBox5 = ["Box_East_AmmoOrd_F", [2.553, 6.046], 51.509] call spawnCollide;
+
+
+// Barriers
+_Barrier1 = ["Land_CncBarrier_F", [-0.982, 7.874], 104.443] call spawnCollide;
+_Barrier2 = ["Land_CncBarrierMedium4_F", [7.185, -2.495], 105.219] call spawnCollide;
+_Barrier3 = ["Land_CncBarrierMedium4_F", [-4.590, -6.436], 22.254] call spawnCollide;
+_Barrier4 = ["Land_HBarrier_5_F", [0.062, 8.877], 11.900] call spawnCollide;
+_Barrier5 = ["Land_HBarrier_5_F", [-9.122, 1.619], 104.530] call spawnCollide;
+_Barrier6 = ["Land_CncBarrier_F", [3.486, 5.918], 113.279] call spawnCollide;
+_Barrier7 = ["Land_CncBarrierMedium_F", [2.782, 2.148], 13.907] call spawnCollide;
+_Barrier8 = ["Land_CncBarrierMedium_F", [0.963, 2.566], 20.570] call spawnCollide;
+_Barrier9 = ["Land_CncBarrierMedium_F", [-0.776, 3.415], 10.933] call spawnCollide;
+
+// Sandbags
+_SandBag1 = ["Land_BagFence_Long_F", [8.155, 2.671], 90.249] call spawnCollide;
+_SandBag2 = ["Land_BagFence_Long_F", [-6.813, -5.317], 204.334] call spawnCollide;
+_SandBag3 = ["Land_BagFence_End_F", [-7.895, -4.648], -155.161] call spawnCollide;
+_SandBag4 = ["Land_BagFence_Corner_F", [7.619, 7.117], 10.795] call spawnCollide;
+_SandBag5 = ["Land_BagFence_Round_F", [-2.303, 9.276], 163.916] call spawnCollide;
+_SandBag6 = ["Land_BagFence_Long_F", [-4.196, 7.665], 121.747] call spawnCollide;
+_SandBag7 = ["Land_BagFence_Short_F", [5.744, 7.504], -166.942] call spawnCollide;
+_SandBag8 = ["Land_BagFence_Short_F", [0.556, -9.223], 5.183] call spawnCollide;
+_SandBag9 = ["Land_BagFence_Long_F", [5.245, -7.294], 131.708] call spawnCollide;
+
+
+
+// Spawning function for OPFOR Base
+// Outpost 2
+// Note: CenterZoneX is the marker for the center of our zone.
+// [Zone to spawn]
+_zoneNum = _this select 0;
+
+_centerZone = format["CenterZone%1", _zoneNum];
+[_centerZone] call setDefaultSpawn;
+
+// Fortifications
+_SandBagBunker = ["Land_BagBunker_Small_F", [0.982, 5.231], 194.415] call spawnCollide;
+
+// Supplies
+_AmmoBox1 = ["Box_East_Ammo_F", [-2.977, -6.746], -21.203] call spawnCollide;
+_AmmoBox2 = ["Box_East_Ammo_F", [-2.403, -7.306], 53.340] call spawnCollide;
+_AmmoBox3 = ["Box_East_AmmoOrd_F", [-9.159, 0.417], 21.457] call spawnCollide;
+_AmmoBox4 = ["Box_East_Grenades_F", [6.171, -4.049]] call spawnCollide;
+_AmmoBox5 = ["Box_East_Support_F", [5.816, -3.381], -55.929] call spawnCollide;
+
+// Misc Items
+_Chair1 = ["Land_ChairPlastic_F", [0.072, -0.307], -84.292] call spawnCollide;
+_Chair2 = ["Land_ChairPlastic_F", [0.778, -0.692], -60.391] call spawnCollide;
+_Chair3 = ["Land_ChairPlastic_F", [-0.817, -5.746], 128.821] call spawnCollide
+_Bench1 = ["Land_Bench_F", [-1.467, 0.406], 112.941] call spawnCollide;
+_Barrel1 = ["Land_WaterBarrel_F", [-3.240, 1.342] call spawnCollide;
+_WaterTank = ["Land_WaterTank_F", [1.830, -2.256], 114.821] call spawnCollide;
+
+// Barriers
+_Barrier1 = ["Land_CncBarrierMedium4_F", [4.610, 0.254], 58.164] call spawnCollide;
+_Barrier2 = ["Land_CncBarrierMedium_F", [-2.471, 4.502], 10.936] call spawnCollide;
+_Barrier3 = ["Land_CncBarrierMedium_F", [-6.680, 5.096], -5.230] call spawnCollide;
+_Barrier4 = ["Land_HBarrier_3_F", [-8.804, -1.221], 36.291] call spawnCollide;
+_Barrier5 = ["Land_HBarrier_3_F", [2.301, -6.282], 163.069] call spawnCollide;
+_Barrier6 = ["Land_HBarrier_1_F", [-3.917, -5.541], 19.423] call spawnCollide;
+_Barrier7 = ["Land_CncBarrier_F", [-6.696, -5.903], 43.520] call spawnCollide;
+_Barrier8 = ["Land_Shoot_House_Wall_Crouch_F", [0.897, -5.836], -18.229] call spawnCollide;
+_Barrier9 = ["Land_Shoot_House_Wall_Crouch_F", [-7.918, -0.776], 34.012] call spawnCollide;
+_Barrier10= ["Land_HBarrier_3_F", [-1.973, -1.092], 209.709] call spawnCollide;
+_Barrier11= ["Land_HBarrier_1_F", [-0.747, -1.516], 11.815] call spawnCollide;
+_Barrier12= ["Land_HBarrier_1_F", [0.462, -2.096], 26.359] call spawnCollide;
+_Barrier13= ["Land_Shoot_House_Wall_Crouch_F", [-1.317, -0.275], 20.989] call spawnCollide;
+_Barrier14= ["Land_Shoot_House_Wall_Crouch_F", [-3.123, 0.565], 26.989] call spawnCollide;
+_Barrier15= ["Land_Shoot_House_Wall_Crouch_F", [0.502, -1.078], 28.699] call spawnCollide;
+    
+// Sandbags
+_SandBag1 = ["Land_BagFence_Round_F", [-2.855, -7.650], 31.845] call spawnCollide;
+_SandBag2 = ["Land_BagFence_Long_F", [-8.908, 2.037], 110.480] call spawnCollide;
+_SandBag3 = ["Land_BagFence_End_F", [-0.689, -7.691], -12.400] call spawnCollide;
+_SandBag4 = ["Land_BagFence_Short_F", [-8.199, 4.253], -74.497] call spawnCollide;
+_SandBag5 = ["Land_BagFence_Round_F", [6.728, -4.531], 282.431] call spawnCollide;
+_SandBag6 = ["Land_BagFence_Short_F", [5.369, -5.741], 150.460] call spawnCollide;
+_SandBag7 = ["Land_BagFence_Corner_F", [-9.707, 0.116], 201.058] call spawnCollide;
+_SandBag8 = ["Land_BagFence_Corner_F", [-0.531, -7.673], 77.842] call spawnCollide;
+
 
 
 // Spawning function for OPFOR Base

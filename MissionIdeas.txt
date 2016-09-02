@@ -1,0 +1,21 @@
+Stock Missions:
+  * Downed helicopter (rescue survivors if possible, destroy helicopter to prevent falling into enemy hands)
+  * Relieve friendly unit that is in contact
+  * Assault a fixed facility
+  * Raid a fixed facility and take items / destroy structures and withdraw
+  * Eliminate an HVT (this can be expanded into convoys, moving targets, and limited time windows)
+  * Recover supplies (weapons cache)
+  - "Abandoned battlefield" like missions --> you relieve a friendly unit too late? (Crimson Tide)
+  - Enemy downed helicopter --> reach before enemy can send reaction force?
+
+Mission Types:
+- Insert, patrol, then extract
+  * Compound/village/NAI to investigate
+
+8/31/2016: "Trail Chasers", Coop on Tanoa
+  "We're inserting a patrol onto a ridgeline with the intent of doing a short patrol followed by an extraction"
+  Helicopter insertion (MH-9), modern era weapons, night, flashlights and flares
+  - Investigate a small compound on the ridgeline? // make contact after arriving there?
+  - Explore the nearby trails, make some contact close, move out along a trail and end up going into the jungle down a hill
+  - Dslyecxi KIA as they exfil down the mountain
+  - They withdraw to a village at the bottom of the hill

@@ -1,3 +1,14 @@
+NOTES: Use pushBack to append to array instead of set on a new element, and especially better than appending arrays with a+b
+??? How to store character classes ??? - create a standard array of all relevant classes with index values that correspond?
+??? Do you want individual unit spawn functions (so you can control the loadout?) with an option for default loadouts?
+??? Have those functions have generic names, and just run the appropriate script file depending on your faction?
+
+--- Start with default loadouts, but do it in a function so we have the option for non-standard loadouts
+--- e.g. spF_Rifleman (spawn friendly rifleman) - which looks up class names from a variable array
+--- the array is defined in the particular faction file which uses pushBack
+--- or, alternatively, use two arrays, one with the generic name the other with the class name and then use "find"
+--- with a helper function to make encoding those values very easy - dictionary like - same for lookup
+
 + Add capturable trigger to zones (see initZones/createzone.sqf in original DUWS)
 + Implement and test facility spawn functions and files
 + Spawn zone garrisons (hold off on AP-generated patrols)

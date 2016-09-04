@@ -4,12 +4,16 @@ Debug_ChooseEnv = player addaction ["Change Environment Settings","settings\envi
 // Set up log for debugging
 player createDiarySubject ["DUWS-Debug", "DUWS-Debug"];
 
+
+
 // Custom Definitions
 SIDE_BLUFOR = 0;
 SIDE_OPFOR = 1;
 SIDE_IND = 2;
 SIDE_CIV = 3;
 SIDE_NONE = 10;
+
+spawnCenter = objNull;
 
 
 // Color Tags

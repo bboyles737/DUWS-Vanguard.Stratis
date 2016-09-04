@@ -1,5 +1,5 @@
-cutText ["", "BLACK FADED", 5];
-0 fadeSound 0;
+//cutText ["", "BLACK FADED", 5];
+//0 fadeSound 0;
 
 Num_Zones = 5;
 Min_Zone_Rad = 250;
@@ -20,5 +20,5 @@ call compile preprocessFileLineNumbers "scripts\DisableMapTextures\mapSwitchText
 _ZoneScript = execVM "intro\place_zones_random.sqf";
 waitUntil {scriptDone _ZoneScript};
 
-cutText ["", "BLACK IN", 2];
-2 fadeSound 1;
+//cutText ["", "BLACK IN", 2];
+//2 fadeSound 1;

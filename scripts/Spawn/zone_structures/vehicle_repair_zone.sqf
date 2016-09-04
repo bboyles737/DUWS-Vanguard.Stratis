@@ -4,7 +4,7 @@
 // [Zone to spawn]
 _zoneNum = _this select 0;
 
-_centerZone = format["CenterZone%1", _zoneNum];
+_centerZone = [_zoneNum] call GetCenterMarker;
 [_centerZone] call setDefaultSpawn;
 
 // Create pipes
@@ -33,7 +33,7 @@ _Box2 = ["Land_Cargo20_military_green_F", [-9.367, -0.206], 96.250] call spawnCo
 _Box3 = ["Land_Cargo20_grey_F", [11.994, -9.138], 95.525] call spawnCollide;
 _VehAmmoBox1 = ["Box_East_AmmoVeh_F", [5.359, 5.950]] call spawnCollide;
 _VehAmmoBox2 = ["Box_East_AmmoVeh_F", [-11.154, 4.164], 15.017] call spawnCollide;
-_AmmoBox = ["O_supplyCrate_F", [-0.729, -5.101], 64.221] call spawnCollide;
+_AmmoBox = ["O_supplyCrate_F", [-0.729, -5.101, 1.385], 64.221] call spawnCollide;
 
 // Other objects
 _WaterTank = ["Land_WaterTank_F", [-7.191, -1.378], 106.685] call spawnCollide;
@@ -71,8 +71,8 @@ _Barrier15 = ["Land_CncWall4_F", [13.905, -5.833], 93.953] call spawnCollide;
 _Barrier16 = ["Land_CncWall1_F", [13.839, -9.430], 100.028] call spawnCollide;
 _Barrier17 = ["Land_CncWall1_F", [13.484, -10.375], 94.123] call spawnCollide;
 _Barrier18 = ["Land_CncWall1_F", [16.201, -2.564], 87.529] call spawnCollide;
-_Barrier19 = ["Land_CncBarrierMedium_F", [13.713, 5.228] call spawnCollide;
-_Barrier20 = ["Land_CncBarrierMedium_F", [13.550, 7.220] call spawnCollide;
-_Barrier21 = ["Land_CncBarrier_F", [-9.018, 7.453] call spawnCollide;
+_Barrier19 = ["Land_CncBarrierMedium_F", [13.713, 5.228]] call spawnCollide;
+_Barrier20 = ["Land_CncBarrierMedium_F", [13.550, 7.220]] call spawnCollide;
+_Barrier21 = ["Land_CncBarrier_F", [-9.018, 7.453]] call spawnCollide;
 
 // End of script

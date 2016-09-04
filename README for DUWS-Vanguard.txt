@@ -1,9 +1,9 @@
 DUWS: Vanguard
 
-Version 0.253 (26AUG16-28AUG16):
+Version 0.253 (26AUG16-4SEP16):
 - Functions added for creating and changing zones
 - Functions added to ease spawning facilities
-- Imported spawning functions for a Vehicle Repair Zone [untested]
+- Imported spawning functions for a Vehicle Repair Zone [tested - largely works]
 - Added functions to return zone markers
 - Implemented zone notifications on entrance and exit
 

@@ -76,6 +76,10 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
         Zone_Array = Zone_Array + [[_CurrentZoneNum, _ZoneLocation, _CurrentZoneRad, SIDE_OPFOR]];
                 
         [_CurrentZoneNum, _ZoneLocation, SIDE_OPFOR, _CurrentZoneRad, "Tester Stupod"] call CreateZoneMarkers;
+        ["Waiting ten seconds"] call DLog;
+        sleep 10;
+        ["Wait complete"] call DLog;
+        [_CurrentZoneNum] execVM "scripts\spawn\zone_structures\vehicle_repair_zone.sqf";
         
         [Zone_Array select 0, SIDE_BLUFOR] call ChangeZoneControl;
     };

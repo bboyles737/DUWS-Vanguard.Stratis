@@ -79,7 +79,7 @@ for [{ _CurrentZoneNum = 1}, { _CurrentZoneNum <= _ZonesToCreate}, { _CurrentZon
         ["Waiting ten seconds"] call DLog;
         sleep 10;
         ["Wait complete"] call DLog;
-        [_CurrentZoneNum] execVM "scripts\spawn\zone_structures\vehicle_repair_zone.sqf";
+        [_CurrentZoneNum] execVM "scripts\spawn\zone_structures\research_station.sqf";
         
         [Zone_Array select 0, SIDE_BLUFOR] call ChangeZoneControl;
     };

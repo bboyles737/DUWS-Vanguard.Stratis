@@ -7,15 +7,44 @@ Stock Missions:
   * Recover supplies (weapons cache)
   - "Abandoned battlefield" like missions --> you relieve a friendly unit too late? (Crimson Tide)
   - Enemy downed helicopter --> reach before enemy can send reaction force?
+  
+Shack Tac:
+  * Patrol to investigate NAI (village, etc.)
+  * Assault objective (airfield)
 
 Mission Types:
 - Insert, patrol, then extract
   * Compound/village/NAI to investigate
 
-8/31/2016: "Trail Chasers", Coop on Tanoa
+9/5/2016: "Stretch Goal: Extract", Coop on Chernarus [8/31/2016]
+Mission name: Airfield Raid (see 8/29/2016 "All for One")
+- Enemy QRF arrives and the OPFOR crawl through holes in the wall!
+- Apparently, they have explosive charges to destroy ammo depots / fuel depot / key vehicles / key buildings
+- This mission goes a lot better
+[[ Stopped 25min out of 43min complete]]
+
+8/31/2016: "Trail Chasers", Coop on Tanoa [8/27/2016]
   "We're inserting a patrol onto a ridgeline with the intent of doing a short patrol followed by an extraction"
-  Helicopter insertion (MH-9), modern era weapons, night, flashlights and flares
+  Helicopter insertion (MH-9), modern era weapons (BLUFOR), night, flashlights and flares
   - Investigate a small compound on the ridgeline? // make contact after arriving there?
   - Explore the nearby trails, make some contact close, move out along a trail and end up going into the jungle down a hill
   - Dslyecxi KIA as they exfil down the mountain
   - They withdraw to a village at the bottom of the hill
+
+8/29/2016: "All for One", Coop on Chernarus [8/27/2016]
+Mission name: Airfield Raid
+"We're making an attack on an enemy airfield.  Our mobility is through BMDs, while we have several Hips acting as air support.  We'll dismount before making the assault on foot."
+[Mission Briefing visible on "Stretch Goal: Extract" 9/5/2016]
+** The invasion of Chernarus begins 0600hrs today.  Our company is spearheading the attack on the CDF airbase.  Primary objective is to destroy enemy air assets.  The airbase is guarded by one platoon of light infantry.  We will overwhelm them with superior mobility and firepower.
+** Enemy: CDF Light Infantry Company (garrisoned at the airbase), CDF Motor Rifle Battalion, CDF Armor Company
+** Friendly: VDV Infantry Platoon x 2, BMD-1P (2 per squad), 4 x Mi-8
+** Mission: Storm t he airfield and destroy enemy assets; hold the airfield if able, otherwise extract to base after all targets destroyed
+** Intent: Airbase lightly guarded by a few bunkers, use the elemtn of surprise.  Destroy as much military assets as possible before QRF arrives.  Hold the airfield if possible, otherwise withdraw.  BMDs have HEAT rounds, limited MG ammo - focus on hard targets.  2 x demo charges per leader, prioritize destruction of enemy air assets.  Mi-8 can be used as CAS or reinforcement transport.
+** Movement Plan: Inf/vehicles deploy to red zone before game on, infantry stay mounted for initial assault.
+Vehicle insertion (BMD), air support (Hip), modern era weapons (Russian/Paratroopers), daylight
+- Dismount short of objective
+- Encounter resistance, regroup to sweep hangar buildings (Alpha squad was clearing those and was wiped out)
+- Enemy reinforcements closing in - consolidate at the hangars to hold out.  Enemy reinforcements catch up to Dslyecxi and KIA
+- Two survivors hole up at the control tower and awaits extraction
+- Friendly air support damages their hangar and ultimately destroys it (BROKEN ARROW)
+- Only one gets out

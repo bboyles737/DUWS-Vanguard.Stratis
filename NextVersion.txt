@@ -29,3 +29,77 @@ Extra Features:
 
 
 ------------------------ Code snippets below -------------------------------
+
+// Add default skill range as global variable
+FriendlySide = BLUFOR;
+FriendlySkillRange = [0.2, 0.5];
+EnemySide = OPFOR;
+EnemySkillRange = [0.2, 0.5];
+
+
+// Probably could do this as a map
+setEnemyClasses = {
+    eR_cls = "O_Soldier_F";
+    eTL_cls = "O_Soldier_TL_F";
+    eAR_cls = "O_Soldier_AR_F";
+    eLAT_cls = "O_Soldier_LAT_F";
+    eGL_cls = "O_Soldier_GL_F";
+};
+
+// Spawns an enemy rifle patrol
+// Parameters:
+// 0: Position array
+// 1: AI skill range (optional)
+// Returns group 
+spE_RiflePatrol = {
+    params [_spawnPos, [_skillRange = EnemySkillRange]];
+    _newGroup = [_spawnPos, EnemySide, [eR_cls, eR_cls], [], [], _skillRange] call BIS_fnc_spawnGroup;
+    _newGroup;
+};
+
+spE_RifleTeam = {
+    params [_spawnPos, [_skillRange = EnemySkillRange]];
+    _newGroup = [_spawnPos, EnemySide, [eTL_cls, eAR_cls, eLAT_cls, eGL_cls], [], [], _skillRange] call BIS_fnc_spawnGroup;
+    _newGroup;
+};
+
+// Uses BIS_fnc_taskPatrol 
+// Parameters:
+// 0: Group 
+// 1: Position to patrol
+// 2: Patrol radius
+grpPatrol = {
+    params [_groupName, _patrolPos, _patrolRad];
+    [_groupName, _patrolPos, _patrolRad] call BIS_fnc_taskPatrol;
+};
+
+// Sets unit to QRF 
+grpQRF = {
+    params [_groupName, _groupPos];
+    ["QRF Not implemented!"] call DLog;
+    // _eventHandler = leader _groupName addEventHandler ["Fired", {[_groupPos] spawn QRF_test}];
+};
+
+
+ // Spawn parameters for BIS_fnc_spawnGroup:
+ // 0: Position
+ // 1: Faction
+ // 2: Array of units
+ // 3: Relative position array (optional)
+ // 4: Rank list array (optional)
+ // 5: Skill range array (optional)
+ // 6: Ammunition count range (optional)
+ // 7: Randomization array [num mandatory, chance for others] (optional)
+ // 8: Azimuth (optional)
+ 
+ // Alternatively, can use createGroup and createUnit
+ // createGroup script command:
+ // _group = createGroup [side] 
+ 
+ // createUnit script command parameters:
+ // _unit = >group< createUnit [params]
+ // 0: Type class (String)
+ // 1: Position (Array)
+ // 2: Placement markers (Array)
+ // 3: Placement radius
+ // 4: Special - "NONE", "FORM", "CAN_COLLIDE", "CARGO"
